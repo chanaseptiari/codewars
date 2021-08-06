@@ -8,18 +8,19 @@ int count_sheep(vector<bool> arr)
 {
     // Chana Logic
     int tmp = 0;
-    // for (int i = 0; i < arr.size(); i++)
-    // {
-    //     if (arr[i])
-    //         tmp++;
-    // }
-    // return tmp;
-
-    for (const bool &a : arr)
+    for (int i = 0; i < arr.size(); i++)
     {
-        a ? tmp++ : tmp;
+        if (arr[i])
+            tmp++;
     }
     return tmp;
+
+    // Reverensi By https://www.codewars.com/kata/54edbc7200b811e956000556/solutions/cpp
+    // for (const bool &a : arr)
+    // {
+    //     a ? tmp++ : tmp;
+    // }
+    // return tmp;
 }
 
 int main(int argc, char const *argv[])
