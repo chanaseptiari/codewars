@@ -1,10 +1,10 @@
 #include <iostream>
-
 #include <string>
 using namespace std;
 
 string reverseString(string str)
 {
+    // Standar For Looping
     string tmp;
     for (int i = str.length() - 1; i >= 0; i--)
     {
