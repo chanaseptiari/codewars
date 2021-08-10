@@ -7,6 +7,5 @@ def createDict(keys, values):
             dic[keys[i]] = None
     return dic
 
-
 print(createDict(['a', 'b', 'c', 'd'], [1, 2, 3]))
 print(createDict(['a', 'b', 'c'], [1, 2, 3, 4]))
