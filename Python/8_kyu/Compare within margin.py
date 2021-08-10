@@ -7,7 +7,6 @@ def close_compare(a, b, margin=0):
         return 1
     return a - b
 
-
 # No Margin
 print(close_compare(4, 5))
 print(close_compare(5, 5))
