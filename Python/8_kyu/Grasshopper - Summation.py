@@ -8,7 +8,6 @@ def summation(num):
 
     return sum(range(num+1))
 
-
 print(summation(1))
 print(summation(8))
 print(summation(22))
