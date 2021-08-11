@@ -14,7 +14,7 @@ int square_sum(const std::vector<int> &numbers)
 
 int main(int argc, char const *argv[])
 {
-    std::cout << square_sum({1, 2}) << std::endl;
-    std::cout << square_sum({0, 3, 4, 5}) << std::endl;
+    std::cout << square_sum({1, 2}) << std::endl;       // Result 5
+    std::cout << square_sum({0, 3, 4, 5}) << std::endl; // Result 50
     return 0;
 }
