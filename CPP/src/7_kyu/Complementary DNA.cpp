@@ -3,6 +3,7 @@
 
 std::string DNAStrand(const std::string &dna)
 {
+  // Chana Logic
   std::string tmp;
   for (auto &i : dna)
   {
