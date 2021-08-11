@@ -1,2 +1,3 @@
 .vscode
-# CPP/bin/*
+CPP/bin/*
+Python/venv
