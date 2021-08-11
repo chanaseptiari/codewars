@@ -2,6 +2,7 @@
 #include <math.h>
 unsigned halving_sum(unsigned n)
 {
+    // Chana Logic
     int result = n, i = 1;
     while (n > 1)
     {
