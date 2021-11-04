@@ -1,5 +1,4 @@
 #include <iostream>
-// #include <algorithm>
 #include <string>
 
 std::string no_space(std::string x)
