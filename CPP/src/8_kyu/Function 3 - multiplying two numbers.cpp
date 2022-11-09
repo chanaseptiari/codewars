@@ -1,0 +1,115 @@
+#include <iostream>
+
+int multiply(int a, int b)
+{
+    return a * b;
+}
+
+int main(int argc, char const *argv[])
+{
+    std::cout << multiply(2, 2) << std::endl;
+    std::cout << multiply(4, 5) << std::endl;
+    std::cout << multiply(10, 100) << std::endl;
+    std::cout << multiply(44, 127) << std::endl;
+    std::cout << multiply(86, 107) << std::endl;
+    std::cout << multiply(8, 86) << std::endl;
+    std::cout << multiply(58, 129) << std::endl;
+    std::cout << multiply(67, 138) << std::endl;
+    std::cout << multiply(86, 128) << std::endl;
+    std::cout << multiply(50, 172) << std::endl;
+    std::cout << multiply(19, 116) << std::endl;
+    std::cout << multiply(51, 137) << std::endl;
+    std::cout << multiply(97, 90) << std::endl;
+    std::cout << multiply(81, 36) << std::endl;
+    std::cout << multiply(88, 2) << std::endl;
+    std::cout << multiply(64, 144) << std::endl;
+    std::cout << multiply(62, 129) << std::endl;
+    std::cout << multiply(57, 67) << std::endl;
+    std::cout << multiply(76, 142) << std::endl;
+    std::cout << multiply(27, 188) << std::endl;
+    std::cout << multiply(34, 60) << std::endl;
+    std::cout << multiply(100, 158) << std::endl;
+    std::cout << multiply(47, 193) << std::endl;
+    std::cout << multiply(49, 25) << std::endl;
+    std::cout << multiply(26, 38) << std::endl;
+    std::cout << multiply(70, 44) << std::endl;
+    std::cout << multiply(77, 144) << std::endl;
+    std::cout << multiply(27, 177) << std::endl;
+    std::cout << multiply(24, 169) << std::endl;
+    std::cout << multiply(22, 44) << std::endl;
+    std::cout << multiply(17, 138) << std::endl;
+    std::cout << multiply(18, 193) << std::endl;
+    std::cout << multiply(82, 40) << std::endl;
+    std::cout << multiply(64, 49) << std::endl;
+    std::cout << multiply(35, 140) << std::endl;
+    std::cout << multiply(96, 4) << std::endl;
+    std::cout << multiply(4, 197) << std::endl;
+    std::cout << multiply(7, 145) << std::endl;
+    std::cout << multiply(95, 79) << std::endl;
+    std::cout << multiply(62, 34) << std::endl;
+    std::cout << multiply(97, 62) << std::endl;
+    std::cout << multiply(73, 21) << std::endl;
+    std::cout << multiply(13, 8) << std::endl;
+    std::cout << multiply(29, 98) << std::endl;
+    std::cout << multiply(95, 140) << std::endl;
+    std::cout << multiply(8, 149) << std::endl;
+    std::cout << multiply(45, 181) << std::endl;
+    std::cout << multiply(50, 1) << std::endl;
+    std::cout << multiply(24, 130) << std::endl;
+    std::cout << multiply(83, 35) << std::endl;
+    std::cout << multiply(26, 115) << std::endl;
+    std::cout << multiply(12, 104) << std::endl;
+    std::cout << multiply(80, 28) << std::endl;
+    std::cout << multiply(26, 36) << std::endl;
+    std::cout << multiply(29, 88) << std::endl;
+    std::cout << multiply(1, 137) << std::endl;
+    std::cout << multiply(97, 109) << std::endl;
+    std::cout << multiply(3, 51) << std::endl;
+    std::cout << multiply(84, 122) << std::endl;
+    std::cout << multiply(75, 39) << std::endl;
+    std::cout << multiply(55, 24) << std::endl;
+    std::cout << multiply(64, 91) << std::endl;
+    std::cout << multiply(28, 56) << std::endl;
+    std::cout << multiply(71, 177) << std::endl;
+    std::cout << multiply(81, 190) << std::endl;
+    std::cout << multiply(77, 88) << std::endl;
+    std::cout << multiply(28, 191) << std::endl;
+    std::cout << multiply(10, 113) << std::endl;
+    std::cout << multiply(29, 161) << std::endl;
+    std::cout << multiply(11, 107) << std::endl;
+    std::cout << multiply(8, 146) << std::endl;
+    std::cout << multiply(7, 146) << std::endl;
+    std::cout << multiply(45, 67) << std::endl;
+    std::cout << multiply(42, 78) << std::endl;
+    std::cout << multiply(66, 79) << std::endl;
+    std::cout << multiply(79, 182) << std::endl;
+    std::cout << multiply(1, 56) << std::endl;
+    std::cout << multiply(79, 47) << std::endl;
+    std::cout << multiply(30, 182) << std::endl;
+    std::cout << multiply(27, 162) << std::endl;
+    std::cout << multiply(5, 133) << std::endl;
+    std::cout << multiply(62, 105) << std::endl;
+    std::cout << multiply(8, 117) << std::endl;
+    std::cout << multiply(95, 193) << std::endl;
+    std::cout << multiply(69, 87) << std::endl;
+    std::cout << multiply(18, 151) << std::endl;
+    std::cout << multiply(48, 175) << std::endl;
+    std::cout << multiply(82, 6) << std::endl;
+    std::cout << multiply(77, 105) << std::endl;
+    std::cout << multiply(87, 28) << std::endl;
+    std::cout << multiply(44, 24) << std::endl;
+    std::cout << multiply(39, 150) << std::endl;
+    std::cout << multiply(64, 110) << std::endl;
+    std::cout << multiply(84, 24) << std::endl;
+    std::cout << multiply(30, 46) << std::endl;
+    std::cout << multiply(8, 185) << std::endl;
+    std::cout << multiply(16, 67) << std::endl;
+    std::cout << multiply(100, 50) << std::endl;
+    std::cout << multiply(44, 122) << std::endl;
+    std::cout << multiply(61, 91) << std::endl;
+    std::cout << multiply(86, 92) << std::endl;
+    std::cout << multiply(38, 84) << std::endl;
+    std::cout << multiply(1, 50) << std::endl;
+
+    return 0;
+}
