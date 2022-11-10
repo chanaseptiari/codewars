@@ -3,16 +3,16 @@ package main
 import "fmt"
 
 func sum(numbers []int) []int {
-	res := []int{0, 0}
+	result := []int{0, 0}
 	for _, v := range numbers {
 		if v > 0 {
-			res[0] += 1
+			result[0] += 1
 		} else {
-			res[1] += v
+			result[1] += v
 		}
 	}
-	fmt.Println(res)
-	return res
+	fmt.Println(result)
+	return result
 }
 
 func main() {
