@@ -53,3 +53,20 @@ fn sum_or_product_test(){
     println!("{}",sum_or_product(&[10, 20, 3, 30, 5, 4], 3));
     
 }
+
+fn odd_count(n: u64) -> u64 {
+    // let mut arr=vec![]; 
+    // for i in 1..n {
+    //     if i % 2 == 1 {
+    //         arr.push(i)
+    //     }
+    // }
+    // return arr.len() as u64;
+    n/2
+}
+
+#[test]
+fn odd_count_test(){
+    println!("{}",odd_count(15));
+    println!("{:?}",odd_count(15023));
+}
