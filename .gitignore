@@ -1,3 +1,9 @@
 .vscode
 bin
+*.lock
+
+# Python VENV
 Python/venv*
+
+# Rust ignore
+rust/target
