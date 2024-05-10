@@ -68,5 +68,27 @@ fn odd_count(n: u64) -> u64 {
 #[test]
 fn odd_count_test(){
     println!("{}",odd_count(15));
-    println!("{:?}",odd_count(15023));
+    println!("{}",odd_count(15023));
+}
+
+// fn unique_in_order<T>(sequence:T)
+fn unique_in_order<T>(sequence: T) -> Vec<T::Item>
+where
+    T: std::iter::IntoIterator,
+    T::Item: std::cmp::PartialEq + std::fmt::Debug,
+{
+    let mut res = vec![];
+
+    for item in sequence {
+        if res.is_empty() || *res.last().unwrap() != item {
+            res.push(item);
+        }
+    }
+    res
+}
+
+#[test]
+fn unique_in_order_test() {
+    println!("{:?}",unique_in_order("AAAABBBCCDAABBB".chars()));
+    println!("{:?}",unique_in_order("ABBCcAD".chars()));
 }
