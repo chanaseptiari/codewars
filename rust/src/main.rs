@@ -5,7 +5,7 @@ fn main() {
 
 #[test]
 fn hello_test(){
-    println!("Hello Unit Test")
+    println!("Hello Unit Test");
 }
 
 fn flip(dir: char, cubes: &[u32]) -> Vec<u32> {
@@ -77,18 +77,34 @@ where
     T: std::iter::IntoIterator,
     T::Item: std::cmp::PartialEq + std::fmt::Debug,
 {
-    let mut res = vec![];
+    // let mut res = vec![];
 
-    for item in sequence {
-        if res.is_empty() || *res.last().unwrap() != item {
-            res.push(item);
-        }
-    }
-    res
+    // for item in sequence {
+    //     if res.is_empty() || *res.last().unwrap() != item {
+    //         res.push(item);
+    //     }
+    // }
+    // res
+    let mut v: Vec<_> = sequence.into_iter().collect();
+    v.dedup();
+    v
 }
 
 #[test]
 fn unique_in_order_test() {
     println!("{:?}",unique_in_order("AAAABBBCCDAABBB".chars()));
     println!("{:?}",unique_in_order("ABBCcAD".chars()));
+}
+
+
+fn find_missing_letter(chars: &[char]) -> char {
+    let arr: Vec<char> = (chars[0] as u8..=chars[chars.len()-1] as u8).into_iter().map(|x| x as char).collect();
+    let diff: Vec<char> = arr.iter().cloned().filter(|x|!chars.contains(x)).collect();
+    diff[0]
+}
+
+#[test]
+fn find_missing_letter_tests() {
+    println!("{}",find_missing_letter(&['a', 'b', 'c', 'd', 'f']));
+    println!("{}",find_missing_letter(&['O', 'Q', 'R', 'S']));
 }
