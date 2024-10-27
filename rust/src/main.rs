@@ -146,6 +146,7 @@ fn series_sum(n: u32) -> String {
     format!("{:.2}", res)
 }
 
+#[test]
 fn series_sum_test() {
     println!("{:?}", series_sum(1));
     println!("{:?}", series_sum(2));
@@ -153,4 +154,17 @@ fn series_sum_test() {
     println!("{:?}", series_sum(7));
     println!("{:?}", series_sum(39));
     println!("{:?}", series_sum(0));
+}
+
+fn remove_exclamation_marks(input: &str) -> String {
+    input.replace("!", "")
+}
+
+#[test]
+fn remove_exclamation_marks_test() {
+    println!("{:?}", remove_exclamation_marks("Hello World!"));
+    println!("{:?}", remove_exclamation_marks("Hello World!!!"));
+    println!("{:?}", remove_exclamation_marks("Hi! Hello!"));
+    println!("{:?}", remove_exclamation_marks(""));
+    println!("{:?}", remove_exclamation_marks("Oh, no!!!!"));
 }
