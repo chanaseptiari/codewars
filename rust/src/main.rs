@@ -120,21 +120,37 @@ fn count_by(x: u32, n: u32) -> Vec<u32> {
 
     // res
 
-    (1 ..= n).map(|a|a*x).collect()
+    (1..=n).map(|a| a * x).collect()
 }
 
 #[test]
-fn count_by_text() {
+fn count_by_test() {
     println!("{:?}", count_by(1, 5));
     println!("{:?}", count_by(1, 10));
     println!("{:?}", count_by(2, 5));
     println!("{:?}", count_by(3, 7));
     println!("{:?}", count_by(50, 5));
     println!("{:?}", count_by(100, 6));
+}
 
-    // assertion(vec![1,2,3,4,5,6,7,8,9,10], (1, 10));
-    // assertion(vec![2,4,6,8,10], (2, 5));
-    // assertion(vec![3,6,9,12,15,18,21], (3, 7));
-    // assertion(vec![50,100,150,200,250], (50, 5));
-    // assertion(vec![100,200,300,400,500,600], (100, 6));
+fn series_sum(n: u32) -> String {
+    let mut index = 1.0;
+    let mut res: f32 = 0.0;
+
+    if n != 0 {
+        for _ in 1..=n {
+            res += 1.0 / index;
+            index += 3.0;
+        }
+    }
+    format!("{:.2}", res)
+}
+
+fn series_sum_test() {
+    println!("{:?}", series_sum(1));
+    println!("{:?}", series_sum(2));
+    println!("{:?}", series_sum(3));
+    println!("{:?}", series_sum(7));
+    println!("{:?}", series_sum(39));
+    println!("{:?}", series_sum(0));
 }
