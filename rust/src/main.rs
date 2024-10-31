@@ -6,6 +6,7 @@ mod odd_count;
 mod remove_exclamation_marks;
 mod series_sum;
 mod sum_or_product;
+mod sum_two_smallest_numbers;
 mod unique_in_order;
 
 fn main() {
@@ -117,4 +118,28 @@ fn add_binary_test() {
     println!("{:?}", add_binary::add_binary(1, 0));
     println!("{:?}", add_binary::add_binary(2, 2));
     println!("{:?}", add_binary::add_binary(51, 12));
+}
+
+#[test]
+fn sum_two_smallest_numbers_test() {
+    println!(
+        "{:?}",
+        sum_two_smallest_numbers::sum_two_smallest_numbers(&[5, 8, 12, 19, 22])
+    );
+    println!(
+        "{:?}",
+        sum_two_smallest_numbers::sum_two_smallest_numbers(&[15, 28, 4, 2, 43])
+    );
+    println!(
+        "{:?}",
+        sum_two_smallest_numbers::sum_two_smallest_numbers(&[23, 71, 33, 82, 1])
+    );
+    println!(
+        "{:?}",
+        sum_two_smallest_numbers::sum_two_smallest_numbers(&[52, 76, 14, 12, 4])
+    );
+    println!(
+        "{:?}",
+        sum_two_smallest_numbers::sum_two_smallest_numbers(&[1, 1, 5, 5])
+    );
 }
