@@ -1,3 +1,12 @@
+mod count_by;
+mod find_missing_letter;
+mod flip;
+mod odd_count;
+mod remove_exclamation_marks;
+mod series_sum;
+mod sum_or_product;
+mod unique_in_order;
+
 fn main() {
     println!("Hello, world!");
 }
@@ -7,164 +16,95 @@ fn hello_test() {
     println!("Hello Unit Test");
 }
 
-fn flip(dir: char, cubes: &[u32]) -> Vec<u32> {
-    let mut cubes = cubes.to_vec();
-
-    if dir == 'R' {
-        cubes.sort();
-    }
-    if dir == 'L' {
-        cubes.sort();
-        cubes.reverse()
-    }
-
-    return cubes;
-}
-
 #[test]
 fn flip_test() {
-    println!("{:?}", flip('R', &vec![3, 2, 1, 2]));
-    println!("{:?}", flip('L', &vec![1, 4, 5, 3, 5]));
-}
-
-fn sum_or_product(list: &[i64], n: usize) -> String {
-    // println!("\n{}\n",n);
-    let mut arr = list.to_vec();
-    arr.sort();
-    let product: i64 = arr[..n].iter().product();
-    let sum: i64 = arr[arr.len() - n..].iter().sum();
-
-    // println!("{:?} {:?}",arr[..n].iter(),arr[arr.len()-n..].iter());
-    // println!("{:?} {:?}",product,sum);
-
-    if sum > product {
-        "sum".to_string()
-    } else if sum < product {
-        "product".to_string()
-    } else {
-        "same".to_string()
-    }
+    println!("{:?}", flip::flip('R', &vec![3, 2, 1, 2]));
+    println!("{:?}", flip::flip('L', &vec![1, 4, 5, 3, 5]));
 }
 
 #[test]
 fn sum_or_product_test() {
-    println!("{}", sum_or_product(&[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4));
-    println!("{}", sum_or_product(&[10, 41, 8, 16, 20, 36, 9, 13, 20], 3));
-    println!("{}", sum_or_product(&[10, 20, 3, 30, 5, 4], 3));
-}
-
-fn odd_count(n: u64) -> u64 {
-    // let mut arr=vec![];
-    // for i in 1..n {
-    //     if i % 2 == 1 {
-    //         arr.push(i)
-    //     }
-    // }
-    // return arr.len() as u64;
-    n / 2
+    println!(
+        "{}",
+        sum_or_product::sum_or_product(&[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4)
+    );
+    println!(
+        "{}",
+        sum_or_product::sum_or_product(&[10, 41, 8, 16, 20, 36, 9, 13, 20], 3)
+    );
+    println!(
+        "{}",
+        sum_or_product::sum_or_product(&[10, 20, 3, 30, 5, 4], 3)
+    );
 }
 
 #[test]
 fn odd_count_test() {
-    println!("{}", odd_count(15));
-    println!("{}", odd_count(15023));
-}
-
-// fn unique_in_order<T>(sequence:T)
-fn unique_in_order<T>(sequence: T) -> Vec<T::Item>
-where
-    T: std::iter::IntoIterator,
-    T::Item: std::cmp::PartialEq + std::fmt::Debug,
-{
-    // let mut res = vec![];
-
-    // for item in sequence {
-    //     if res.is_empty() || *res.last().unwrap() != item {
-    //         res.push(item);
-    //     }
-    // }
-    // res
-    let mut v: Vec<_> = sequence.into_iter().collect();
-    v.dedup();
-    v
+    println!("{}", odd_count::odd_count(15));
+    println!("{}", odd_count::odd_count(15023));
 }
 
 #[test]
 fn unique_in_order_test() {
-    println!("{:?}", unique_in_order("AAAABBBCCDAABBB".chars()));
-    println!("{:?}", unique_in_order("ABBCcAD".chars()));
-}
-
-fn find_missing_letter(chars: &[char]) -> char {
-    let arr: Vec<char> = (chars[0] as u8..=chars[chars.len() - 1] as u8)
-        .into_iter()
-        .map(|x| x as char)
-        .collect();
-    let diff: Vec<char> = arr.iter().cloned().filter(|x| !chars.contains(x)).collect();
-    diff[0]
+    println!(
+        "{:?}",
+        unique_in_order::unique_in_order("AAAABBBCCDAABBB".chars())
+    );
+    println!("{:?}", unique_in_order::unique_in_order("ABBCcAD".chars()));
 }
 
 #[test]
 fn find_missing_letter_tests() {
-    println!("{}", find_missing_letter(&['a', 'b', 'c', 'd', 'f']));
-    println!("{}", find_missing_letter(&['O', 'Q', 'R', 'S']));
-}
-
-fn count_by(x: u32, n: u32) -> Vec<u32> {
-    // let mut res: Vec<u32> = Vec::new();
-
-    // for index in 1 ..= n {
-    //     res.push(index * x as u32);
-    //     // res.push(n)
-    // }
-
-    // res
-
-    (1..=n).map(|a| a * x).collect()
+    println!(
+        "{}",
+        find_missing_letter::find_missing_letter(&['a', 'b', 'c', 'd', 'f'])
+    );
+    println!(
+        "{}",
+        find_missing_letter::find_missing_letter(&['O', 'Q', 'R', 'S'])
+    );
 }
 
 #[test]
 fn count_by_test() {
-    println!("{:?}", count_by(1, 5));
-    println!("{:?}", count_by(1, 10));
-    println!("{:?}", count_by(2, 5));
-    println!("{:?}", count_by(3, 7));
-    println!("{:?}", count_by(50, 5));
-    println!("{:?}", count_by(100, 6));
-}
-
-fn series_sum(n: u32) -> String {
-    let mut index = 1.0;
-    let mut res: f32 = 0.0;
-
-    if n != 0 {
-        for _ in 1..=n {
-            res += 1.0 / index;
-            index += 3.0;
-        }
-    }
-    format!("{:.2}", res)
+    println!("{:?}", count_by::count_by(1, 5));
+    println!("{:?}", count_by::count_by(1, 10));
+    println!("{:?}", count_by::count_by(2, 5));
+    println!("{:?}", count_by::count_by(3, 7));
+    println!("{:?}", count_by::count_by(50, 5));
+    println!("{:?}", count_by::count_by(100, 6));
 }
 
 #[test]
 fn series_sum_test() {
-    println!("{:?}", series_sum(1));
-    println!("{:?}", series_sum(2));
-    println!("{:?}", series_sum(3));
-    println!("{:?}", series_sum(7));
-    println!("{:?}", series_sum(39));
-    println!("{:?}", series_sum(0));
-}
-
-fn remove_exclamation_marks(input: &str) -> String {
-    input.replace("!", "")
+    println!("{:?}", series_sum::series_sum(1));
+    println!("{:?}", series_sum::series_sum(2));
+    println!("{:?}", series_sum::series_sum(3));
+    println!("{:?}", series_sum::series_sum(7));
+    println!("{:?}", series_sum::series_sum(39));
+    println!("{:?}", series_sum::series_sum(0));
 }
 
 #[test]
 fn remove_exclamation_marks_test() {
-    println!("{:?}", remove_exclamation_marks("Hello World!"));
-    println!("{:?}", remove_exclamation_marks("Hello World!!!"));
-    println!("{:?}", remove_exclamation_marks("Hi! Hello!"));
-    println!("{:?}", remove_exclamation_marks(""));
-    println!("{:?}", remove_exclamation_marks("Oh, no!!!!"));
+    println!(
+        "{:?}",
+        remove_exclamation_marks::remove_exclamation_marks("Hello World!")
+    );
+    println!(
+        "{:?}",
+        remove_exclamation_marks::remove_exclamation_marks("Hello World!!!")
+    );
+    println!(
+        "{:?}",
+        remove_exclamation_marks::remove_exclamation_marks("Hi! Hello!")
+    );
+    println!(
+        "{:?}",
+        remove_exclamation_marks::remove_exclamation_marks("")
+    );
+    println!(
+        "{:?}",
+        remove_exclamation_marks::remove_exclamation_marks("Oh, no!!!!")
+    );
 }
