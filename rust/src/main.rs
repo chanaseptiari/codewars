@@ -1,3 +1,4 @@
+mod add_binary;
 mod count_by;
 mod find_missing_letter;
 mod flip;
@@ -107,4 +108,13 @@ fn remove_exclamation_marks_test() {
         "{:?}",
         remove_exclamation_marks::remove_exclamation_marks("Oh, no!!!!")
     );
+}
+
+#[test]
+fn add_binary_test() {
+    println!("{:?}", add_binary::add_binary(1, 1));
+    println!("{:?}", add_binary::add_binary(0, 1));
+    println!("{:?}", add_binary::add_binary(1, 0));
+    println!("{:?}", add_binary::add_binary(2, 2));
+    println!("{:?}", add_binary::add_binary(51, 12));
 }
